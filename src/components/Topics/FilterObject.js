@@ -31,7 +31,14 @@ export default class FilterObject extends Component {
   }
 
   filteredEmployees(userInput){
-
+    let employees = this.state.employees
+    let filtered = []
+    for (let i = 0; i < employees.length; i++) {
+      if(employees[i].hasOwnProperty(userInput)){
+        filtered.push(employees[i])
+      }
+    }
+    this.setState({filteredEmployees: filtered})
   }
 
 
